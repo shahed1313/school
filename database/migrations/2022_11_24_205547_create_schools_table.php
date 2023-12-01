@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('Dname');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('typeOfSchool_id')->constrained('typeOfSchools')->cascadeOnDelete();
+            $table->foreignId('typeOfSchool_id')->constrained('type_Of_Schools')->cascadeOnDelete();
             $table->foreignId('nursery_id')->constrained('nurseries')->cascadeOnDelete()->nullable();
             $table->timestamps();
         });

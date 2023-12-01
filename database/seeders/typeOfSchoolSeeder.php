@@ -13,7 +13,7 @@ class typeOfSchoolSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('typeOfSchool')->insert
+        DB::table('type_of_schools')->insert
         (
 
 [

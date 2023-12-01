@@ -14,7 +14,7 @@ class SclassesSeeder extends Seeder
     public function run(): void
     {
 
-            DB::table('Sclasses')->insert
+            DB::table('s_classes')->insert
             (
 
     [
