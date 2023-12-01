@@ -19,13 +19,13 @@ class nurseriesSeeder extends Seeder
 
 [
     [
-        'name'=>'KJ1'
+        'Nname'=>'KJ1'
     ],
     [
-        'name'=>'KJ2'
+        'Nname'=>'KJ2'
     ],
     [
-        'name'=>'KJ3'
+        'Nname'=>'KJ3'
     ],]);
     }
     }
