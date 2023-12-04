@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\NurseryController;
 use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\SchoolSClassController;
+use App\Http\Controllers\SClassController;
+use App\Http\Controllers\StudentSClassController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 
@@ -22,3 +26,19 @@ Route::post('addSchool',[NurseryController::class,'addNursery']);
 Route::post('editNursery',[NurseryController::class,'editNursery']);
 Route::get('getNursery',[NurseryController::class,'getNursery']);
 Route::delete('deleteNursery',[NurseryController::class,'deleteNursery']);
+
+
+Route::get('getclass',[SClassController::class,'getclass']);
+Route::get('getStudent',[SClassController::class,'getStudent']);
+
+
+Route::post('addClass',[DirectorController::class,'addClass']);
+Route::post('editClass',[DirectorController::class,'editClass']);
+Route::delete('deleteClass',[DirectorController::class,'deleteClass']);
+
+Route::post('editStudent',[DirectorController::class,'editStudent']);
+Route::delete('deleteStudent',[DirectorController::class,'deleteStudent']);
+
+Route::post('addStudent',[StudentSClassController::class,'addStudent']);
+
+

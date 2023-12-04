@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SchoolSClass;
+use App\Models\SClass;
 use App\Models\student;
 use Illuminate\Http\Request;
 
@@ -18,15 +19,37 @@ class DirectorController extends Controller
           ]);
 
         }
-        function addstudent(Request $request) {
 
-            student::query()->create([
-                'Fname'=>$request->Fname,
-                'Lname'=>$request->Lname,
-                'dateOfBirth'=>$request->dateOfBirth,
 
-              ]);
+            function editClass(Request $request)  {
+                SClass::query()
+                ->where('id',$request->id)
+                ->update([
+                    'name'=>$request->name,
 
+                ]);
             }
+            function deleteClass(Request $request)  {
+                SClass::query()
+                ->where('id',$request->id)
+                ->delete();
+               }
+
+               function editStudent(Request $request)  {
+                student::query()
+                ->where('id',$request->id)
+                ->update([
+                    'Fname'=>$request->Fname,
+
+                ]);
+            }
+            function deletestudent(Request $request)  {
+                student::query()
+                ->where('id',$request->id)
+                ->delete();
+               }
+
+
+
 
 }
