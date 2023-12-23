@@ -17,28 +17,36 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 });
 
-Route::post('addSchool',[AdminController::class,'addSchool']);
-Route::post('editSchool',[AdminController::class,'editSchool']);
-Route::get('getSchool',[AdminController::class,'getSchool']);
-Route::delete('deleteSchool',[AdminController::class,'deleteSchool']);
 
-Route::post('addSchool',[NurseryController::class,'addNursery']);
-Route::post('editNursery',[NurseryController::class,'editNursery']);
-Route::get('getNursery',[NurseryController::class,'getNursery']);
-Route::delete('deleteNursery',[NurseryController::class,'deleteNursery']);
+Route::group(['middleware' => 'director'], function () {
+    Route::post('addSchool',[AdminController::class,'addSchool']);
+    Route::post('editSchool',[AdminController::class,'editSchool']);
+    Route::get('getSchool',[AdminController::class,'getSchool']);
+    Route::delete('deleteSchool',[AdminController::class,'deleteSchool']);
+
+    Route::post('addNursery',[NurseryController::class,'addNursery']);
+    Route::post('editNursery',[NurseryController::class,'editNursery']);
+    Route::get('getNursery',[NurseryController::class,'getNursery']);
+    Route::delete('deleteNursery',[NurseryController::class,'deleteNursery']);
+});
 
 
-Route::get('getclass',[SClassController::class,'getclass']);
-Route::get('getStudent',[SClassController::class,'getStudent']);
+Route::group(['middleware' => 'director'], function () {
+    Route::post('addClass', [DirectorController::class, 'addClass']);
+    Route::post('editClass', [DirectorController::class, 'editClass']);
+    Route::delete('deleteClass', [DirectorController::class, 'deleteClass']);
+    Route::get('getclass',[SClassController::class,'getclass']);
+});
 
 
-Route::post('addClass',[DirectorController::class,'addClass']);
-Route::post('editClass',[DirectorController::class,'editClass']);
-Route::delete('deleteClass',[DirectorController::class,'deleteClass']);
 
-Route::post('editStudent',[DirectorController::class,'editStudent']);
-Route::delete('deleteStudent',[DirectorController::class,'deleteStudent']);
+Route::group(['middleware' => 'teacher'], function () {
+    Route::post('editStudent',[DirectorController::class,'editStudent']);
+    Route::delete('deleteStudent',[DirectorController::class,'deleteStudent']);
+    Route::post('addStudent',[StudentSClassController::class,'addStudent']);
+    Route::get('getStudent',[SClassController::class,'getStudent']);
+    Route::get('getStudents',[SClassController::class,'getStudents']);
+});
 
-Route::post('addStudent',[StudentSClassController::class,'addStudent']);
 
 
