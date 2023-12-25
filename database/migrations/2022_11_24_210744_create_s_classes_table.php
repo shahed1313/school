@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('s_classes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('NStudent');
+            $table->string('NStudent')->nullable();
             $table->timestamps();
         });
     }

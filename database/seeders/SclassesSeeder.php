@@ -19,38 +19,51 @@ class SclassesSeeder extends Seeder
 
     [
         [
-            'name'=>'first class'
+            'name'=>'first class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'second class'
+            'name'=>'second class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'third class'
+            'name'=>'third class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'fourth class'
+            'name'=>'fourth class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'fifth class'
+            'name'=>'fifth class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'sixth class'
+            'name'=>'sixth class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'seventh class'
+            'name'=>'seventh class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'eighth class'
+            'name'=>'eighth class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'tenth class'
+            'name'=>'tenth class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'11 class'
+            'name'=>'11 class',
+            'NStudent'=>null
         ],
         [
-            'name'=>'12 class'
+            'name'=>'12 class',
+            'NStudent'=>null
         ],
+
+
             ]);
         }
     }

@@ -18,7 +18,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 
-Route::group(['middleware' => 'director'], function () {
+Route::group(['middleware' => 'Admin'], function () {
     Route::post('addSchool',[AdminController::class,'addSchool']);
     Route::post('editSchool',[AdminController::class,'editSchool']);
     Route::get('getSchool',[AdminController::class,'getSchool']);
@@ -28,6 +28,8 @@ Route::group(['middleware' => 'director'], function () {
     Route::post('editNursery',[NurseryController::class,'editNursery']);
     Route::get('getNursery',[NurseryController::class,'getNursery']);
     Route::delete('deleteNursery',[NurseryController::class,'deleteNursery']);
+
+    Route::delete('admin',[AdminController::class,'admin']);
 });
 
 

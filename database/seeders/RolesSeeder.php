@@ -21,13 +21,13 @@ class RolesSeeder extends Seeder
         'name'=>'Admin'
     ],
     [
-        'name'=>'student'
+        'name'=>'director'
     ],
     [
         'name'=>'teacher'
     ],
     [
-        'name'=>'director'
+        'name'=>'student'
     ],
 
 ]);
